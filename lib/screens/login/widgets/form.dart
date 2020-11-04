@@ -4,6 +4,8 @@ import 'package:flubank/widgets/default_button.dart';
 import 'package:flubank/widgets/form_errors.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
+
 class LoginForm extends StatefulWidget {
   LoginForm({Key key}) : super(key: key);
 
@@ -18,6 +20,7 @@ class _LoginFormState extends State<LoginForm> {
   @override
   Widget build(BuildContext context) {
     bool checkedValue = false;
+
     return Form(
       key: _formKey,
       child: Column(
@@ -38,35 +41,20 @@ class _LoginFormState extends State<LoginForm> {
             },
           ),
           SizedBox(height: 40),
-          _botomContent(checkedValue),
+          CheckboxListTile(
+            checkColor: AppColors.mainColor,
+            // activeColor: AppColors.mainColor,
+            title: Text('Recordar contraseña?'),
+            value: checkedValue,
+            onChanged: (bool value) {
+              print(value);
+              setState(() {
+                checkedValue = value;
+              });
+            },
+          ),
         ],
       ),
-    );
-  }
-
-  Row _botomContent(bool checkedValue) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Row(
-          children: [
-            Checkbox(
-              value: checkedValue,
-              onChanged: (value) {
-                setState(() {
-                  checkedValue = value;
-                  print(value);
-                });
-              },
-            ),
-            Text('Recordar')
-          ],
-        ),
-        Text(
-          'Recuperar contraseña',
-          style: TextStyle(fontSize: 18),
-        )
-      ],
     );
   }
 
@@ -89,14 +77,12 @@ class _LoginFormState extends State<LoginForm> {
         ),
       ),
       validator: (value) {
-        const String emptyEmail = 'El email es requerido';
-        const String invalidEmail = 'El email no es válido';
-
         if (value.isEmpty && !errors.contains(emptyEmail)) {
           setState(() {
             errors.add(emptyEmail);
           });
         }
+
         RegExp regExp = RegExp(emailPattern);
         if (!regExp.hasMatch(value) && !errors.contains(invalidEmail)) {
           setState(() {
