@@ -1,8 +1,9 @@
+import 'package:flubank/ui/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'routes.dart';
-import 'screens/splash/splash_screen.dart';
-import 'theme.dart';
+
+import 'ui/shared/theme.dart';
 
 void main() => runApp(MyApp());
 

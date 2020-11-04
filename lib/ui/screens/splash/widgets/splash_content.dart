@@ -1,3 +1,4 @@
+import 'package:flubank/ui/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class SplashContent extends StatelessWidget {
@@ -19,7 +20,7 @@ class SplashContent extends StatelessWidget {
           'FluBank',
           style: TextStyle(
             fontSize: 40,
-            color: Theme.of(context).canvasColor,
+            color: AppColors.mainColor,
             fontWeight: FontWeight.bold,
           ),
         ),
