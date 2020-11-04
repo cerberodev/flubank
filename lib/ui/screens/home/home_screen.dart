@@ -1,4 +1,5 @@
 import 'package:flubank/ui/shared/constants.dart';
+import 'package:flubank/ui/widgets/amount.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,12 +13,22 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Inicio'),
       ),
-      body: Container(
-        width: double.infinity,
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Amount(
+              'Hola Pierre, tu saldo disponible es:',
+              '100',
+              '\$',
+            ),
+            const SizedBox(height: 20),
+            Amount(
+              'Hola Pierre, tu saldo disponible es:',
+              '100',
+              '\$',
+            ),
+            const SizedBox(height: 20),
             Text('FluBank'),
             RaisedButton(
               color: AppColors.mainColor,
