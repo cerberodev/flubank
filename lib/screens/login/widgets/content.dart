@@ -8,17 +8,16 @@ class LoginScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: SafeArea(
-        child: Container(
-          width: double.infinity,
+        child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 100),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 _pageTitle(),
                 SizedBox(height: 10),
                 _pageSubtitle(),
-                SizedBox(height: 100),
+                SizedBox(height: 80),
                 LoginForm(),
               ],
             ),

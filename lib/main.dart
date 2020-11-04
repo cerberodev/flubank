@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Ecommerce App',
+      title: 'FluBank',
       theme: lightTheme(),
       debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routeName,

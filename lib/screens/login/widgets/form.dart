@@ -16,6 +16,7 @@ class _LoginFormState extends State<LoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    bool checkedValue = false;
     return Form(
       key: _formKey,
       child: Column(
@@ -34,8 +35,36 @@ class _LoginFormState extends State<LoginForm> {
               }
             },
           ),
+          SizedBox(height: 40),
+          _botomContent(checkedValue),
         ],
       ),
+    );
+  }
+
+  Row _botomContent(bool checkedValue) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Checkbox(
+              value: checkedValue,
+              onChanged: (value) {
+                setState(() {
+                  checkedValue = value;
+                  print(value);
+                });
+              },
+            ),
+            Text('Recordar')
+          ],
+        ),
+        Text(
+          'Recuperar contraseña',
+          style: TextStyle(fontSize: 18),
+        )
+      ],
     );
   }
 
