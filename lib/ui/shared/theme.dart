@@ -6,20 +6,18 @@ import 'constants.dart';
 ThemeData lightTheme() {
   return ThemeData(
     appBarTheme: AppBarTheme(
-      color: AppColors.mainColor,
-      textTheme: GoogleFonts.poppinsTextTheme()
-          .apply(
-            bodyColor: Colors.white,
-          )
-          .copyWith(
-            headline6: TextStyle(
-              fontSize: 20,
-            ),
-          ),
+      iconTheme: IconThemeData(size: 30),
+      elevation: 0,
+      centerTitle: true,
+      brightness: Brightness.light,
+      color: Colors.white,
+      textTheme: GoogleFonts.poppinsTextTheme().copyWith(
+        headline6: TextStyle(fontSize: 20, color: AppColors.mainColor),
+      ),
     ),
-    accentColor: AppColors.accentColor,
-    canvasColor: AppColors.mainColor,
-    scaffoldBackgroundColor: Colors.white,
+    //accentColor: AppColors.accentColor,
+    //canvasColor: AppColors.mainColor,
+    //scaffoldBackgroundColor: Colors.white,
     textTheme: GoogleFonts.poppinsTextTheme()
         .apply(
           bodyColor: AppColors.secondColor,
@@ -50,7 +48,6 @@ ThemeData lightTheme() {
         gapPadding: 5,
       ),
     ),
-    iconTheme: IconThemeData(color: AppColors.secondColor),
   );
 }
 
