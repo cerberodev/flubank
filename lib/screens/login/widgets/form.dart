@@ -1,4 +1,5 @@
 import 'package:flubank/constants.dart';
+import 'package:flubank/screens/home/home_screen.dart';
 import 'package:flubank/widgets/default_button.dart';
 import 'package:flubank/widgets/form_errors.dart';
 import 'package:flutter/material.dart';
@@ -30,8 +31,9 @@ class _LoginFormState extends State<LoginForm> {
           AppDefaulButton(
             text: 'Ingresar',
             onTap: () {
-              if (_formKey.currentState.validate()) {
+              if (_formKey.currentState.validate() && errors.length == 0) {
                 _formKey.currentState.save();
+                Navigator.pushReplacementNamed(context, HomeScreen.routeName);
               }
             },
           ),
