@@ -12,7 +12,7 @@ class BarScreenFirst extends StatelessWidget {
         Expanded(
           flex: 1,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5),
             child: Amount(
               'Hola Pierre, tu saldo disponible es:',
               '100',

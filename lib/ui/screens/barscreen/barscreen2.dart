@@ -1,3 +1,4 @@
+import 'package:flubank/ui/screens/home/widgets/listcardoffert.dart';
 import 'package:flutter/material.dart';
 
 class BarScreenSecond extends StatelessWidget {
@@ -5,8 +6,6 @@ class BarScreenSecond extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text('Offerts List')),
-    );
+    return ListCardOfferts();
   }
 }
