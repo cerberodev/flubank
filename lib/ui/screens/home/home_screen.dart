@@ -1,7 +1,6 @@
-import 'package:flubank/ui/screens/home/widgets/listcarditem.dart';
+import 'package:flubank/ui/screens/barscreen/barscreen1.dart';
+import 'package:flubank/ui/widgets/button_bar.dart';
 import 'package:flutter/material.dart';
-
-import 'package:flubank/ui/widgets/amount.dart';
 
 class HomeScreen extends StatelessWidget {
   static String routeName = 'homeScreen';
@@ -12,27 +11,20 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Inicio'),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            flex: 1,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Amount(
-                'Hola Pierre, tu saldo disponible es:',
-                '100',
-                '\$',
-              ),
-            ),
+      body: DefaultTabController(
+        length: 5,
+        child: Scaffold(
+          body: TabBarView(
+            children: [
+              BarScreenFirst(),
+              BarScreenFirst(),
+              BarScreenFirst(),
+              BarScreenFirst(),
+              BarScreenFirst(),
+            ],
           ),
-          Expanded(
-            flex: 3,
-            child: Container(
-              width: double.infinity,
-              child: ListCard(),
-            ),
-          )
-        ],
+          bottomNavigationBar: ButtomBar(),
+        ),
       ),
     );
   }
