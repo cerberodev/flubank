@@ -20,8 +20,8 @@ class ButtomBar extends StatelessWidget {
             text: 'Home',
           ),
           Tab(
-            icon: Icon(Icons.link),
-            text: 'Link',
+            icon: Icon(Icons.local_offer),
+            text: 'Offert',
           ),
           Tab(
             icon: Icon(Icons.qr_code),
