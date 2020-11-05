@@ -1,10 +1,8 @@
-import 'package:flubank/constants.dart';
-import 'package:flubank/screens/home/home_screen.dart';
-import 'package:flubank/widgets/default_button.dart';
-import 'package:flubank/widgets/form_errors.dart';
+import 'package:flubank/ui/screens/home/home_screen.dart';
+import 'package:flubank/ui/shared/constants.dart';
+import 'package:flubank/ui/widgets/default_button.dart';
+import 'package:flubank/ui/widgets/form_errors.dart';
 import 'package:flutter/material.dart';
-
-import '../../../constants.dart';
 
 class LoginForm extends StatefulWidget {
   LoginForm({Key key}) : super(key: key);
@@ -16,21 +14,21 @@ class LoginForm extends StatefulWidget {
 class _LoginFormState extends State<LoginForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
+  bool checkedValue = false;
 
   @override
   Widget build(BuildContext context) {
-    bool checkedValue = false;
-
     return Form(
       key: _formKey,
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _emailInput(),
-          SizedBox(height: 25),
+          const SizedBox(height: 20),
           _passwordInput(),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           FormErrors(errors: errors),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           AppDefaulButton(
             text: 'Ingresar',
             onTap: () {
@@ -40,7 +38,7 @@ class _LoginFormState extends State<LoginForm> {
               }
             },
           ),
-          SizedBox(height: 40),
+          const SizedBox(height: 20),
           CheckboxListTile(
             checkColor: AppColors.mainColor,
             // activeColor: AppColors.mainColor,
