@@ -86,5 +86,52 @@ void main() {
       final scrollsummary = TimelineSummary.summarize(scrolling);
       await scrollsummary.writeSummaryToFile('scrolling', pretty: true);
     });
+
+    test('Scroll Return', () async {
+      final buttonBar = find.byType('PageView');
+
+      final scrolling = await driver.traceAction(() async {
+        await driver.scroll(buttonBar, 400, 0, Duration(seconds: 1));
+        await driver.scroll(buttonBar, 400, 0, Duration(seconds: 1));
+        await driver.scroll(buttonBar, 400, 0, Duration(seconds: 1));
+        await driver.scroll(buttonBar, 400, 0, Duration(seconds: 1));
+        await driver.scroll(buttonBar, 400, 0, Duration(seconds: 1));
+      });
+
+      final scrollsummary = TimelineSummary.summarize(scrolling);
+      await scrollsummary.writeSummaryToFile('scrolling', pretty: true);
+    });
+  });
+
+  group('Home test', () {
+    FlutterDriver driver;
+
+    setUpAll(() async {
+      driver = await FlutterDriver.connect();
+    });
+
+    test('Scroll', () async {
+      final listview = find.byType('ListCard');
+
+      final scrolling = await driver.traceAction(() async {
+        await driver.scroll(listview, 0, -400, Duration(seconds: 1));
+      });
+
+      final scrollsummary = TimelineSummary.summarize(scrolling);
+      await scrollsummary.writeSummaryToFile('scrolling', pretty: true);
+    });
+
+    test('Find Monto', () async {
+      final monto = find.byValueKey('cantidad');
+      
+      final cantidad = await driver.traceAction(() async {
+        await driver.waitFor(monto);
+      });
+
+      final cantidadFinal = TimelineSummary.summarize(cantidad);
+      await cantidadFinal.writeTimelineToFile('monto', pretty: true);
+
+    });
+
   });
 }
