@@ -110,6 +110,12 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
+    tearDownAll(() async {
+      if (driver != null) {
+        await driver.close();
+      }
+    });
+
     test('Scroll', () async {
       final listview = find.byType('ListCard');
 
@@ -134,4 +140,27 @@ void main() {
     });
 
   });
+
+  group('ButtonBar test', () {
+    FlutterDriver driver;
+
+    setUpAll(() async {
+      driver = await FlutterDriver.connect();
+    });
+
+    tearDownAll(() async {
+      if (driver != null) {
+        await driver.close();
+      }
+    });
+
+     test('Tap button - Home', () async {
+      List<String> taps = ['tap1', 'tap2', 'tap3', 'tap4', 'tap5', 'tap6'];
+      for (var i = 0; i < taps.length; i++) {
+        final tap = find.byValueKey(taps[i]);
+        await driver.tap(tap, timeout: Duration(milliseconds: 1000));
+      }
+     });
+  });
+
 }
