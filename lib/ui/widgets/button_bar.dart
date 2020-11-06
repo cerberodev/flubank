@@ -20,8 +20,8 @@ class ButtomBar extends StatelessWidget {
             text: 'Home',
           ),
           Tab(
-            icon: Icon(Icons.link),
-            text: 'Link',
+            icon: Icon(Icons.local_offer),
+            text: 'Offert',
           ),
           Tab(
             icon: Icon(Icons.qr_code),
@@ -32,8 +32,8 @@ class ButtomBar extends StatelessWidget {
             text: 'Add',
           ),
           Tab(
-            icon: Icon(Icons.payments),
-            text: 'Pay',
+            icon: Icon(Icons.home_repair_service),
+            text: 'Service',
           ),
         ],
         labelColor: AppColors.mainDarkColor,
