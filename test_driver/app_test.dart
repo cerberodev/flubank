@@ -9,12 +9,6 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-    tearDownAll(() async {
-      if (driver != null) {
-        await driver.close();
-      }
-    });
-
     test('Scroll', () async {
       final listview = find.byType('PageView');
 
@@ -41,32 +35,30 @@ void main() {
 
     test('Error Email Required', () async {
       await driver.tap(find.byValueKey('passKey'));
-      await driver.enterText('pierrealexis61196@gmail.com');
+      await driver.enterText('123456');
       await driver.tap(find.byValueKey('ButtonLogginKey'));
     });
   });
 
-  group('Loggind Confirmed', () {
-    FlutterDriver driver;
-
-    setUpAll(() async {
-      driver = await FlutterDriver.connect();
-    });
-
-    tearDownAll(() async {
-      if (driver != null) {
-        await driver.close();
-      }
-    });
-
-    test('Loggin Confirmed', () async {
-      await driver.tap(find.byValueKey('emailKey'));
-      await driver.enterText('pierrealexis61196@gmail.com');
-      await driver.tap(find.byValueKey('passKey'));
-      await driver.enterText('pierrealexis61196@gmail.com');
-      await driver.tap(find.byValueKey('ButtonLogginKey'));
-    });
-  });
+  //group('Loggind:', () {
+  //  FlutterDriver driver;
+//
+  //  setUpAll(() async {
+  //    driver = await FlutterDriver.connect();
+  //  });
+//
+  //  test('Email Confirmed', () async {
+  //    await driver.tap(find.byValueKey('emailKey'));
+  //    await driver.enterText('pierrealexis61196@gmail.com');
+  //  });
+  //  test('Password Confirmed', () async {
+  //    await driver.tap(find.byValueKey('passKey'));
+  //    await driver.enterText('123456');
+  //  });
+  //  test('Tap Button Loggin', () async {
+  //    await driver.tap(find.byValueKey('ButtonLogginKey'));
+  //  });
+  //});
 
   group('Button Bar Test', () {
     FlutterDriver driver;
@@ -81,7 +73,7 @@ void main() {
       }
     });
     test('Scroll', () async {
-      final buttonBar = find.byType('ButtonBar');
+      final buttonBar = find.byType('PageView');
 
       final scrolling = await driver.traceAction(() async {
         await driver.scroll(buttonBar, -400, 0, Duration(seconds: 1));
