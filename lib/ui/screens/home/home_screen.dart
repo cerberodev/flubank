@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
         child: Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              print('tRANSFER');
+              // print('tRANSFER');
             },
             backgroundColor: AppColors.mainDarkColor,
             child: Icon(Icons.payments_sharp),
@@ -94,5 +94,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-

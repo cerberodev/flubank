@@ -123,15 +123,39 @@ void main() {
 
     test('Find Monto', () async {
       final monto = find.byValueKey('cantidad');
-      
+
       final cantidad = await driver.traceAction(() async {
         await driver.waitFor(monto);
       });
 
       final cantidadFinal = TimelineSummary.summarize(cantidad);
       await cantidadFinal.writeTimelineToFile('monto', pretty: true);
+    });
+  });
 
+  group('Taps', () {
+    FlutterDriver driver;
+
+    setUpAll(() async {
+      driver = await FlutterDriver.connect();
     });
 
+    // test('Tap', () async {
+    // final taps = find.byValueKey('tap2');
+    test('Test Tap Bar', () async {
+      // await driver. taps = find.byType('TapBar');
+
+      await driver.tap(find.byValueKey('tap2'));
+      await driver.tap(find.byValueKey('tap3'));
+      await driver.tap(find.byValueKey('tap4'));
+      await driver.tap(find.byValueKey('tap5'));
+      await driver.tap(find.byValueKey('tap6'));
+
+      await driver.tap(find.byValueKey('tap5'));
+      await driver.tap(find.byValueKey('tap4'));
+      await driver.tap(find.byValueKey('tap3'));
+      await driver.tap(find.byValueKey('tap2'));
+      await driver.tap(find.byValueKey('tap1'));
+    });
   });
 }

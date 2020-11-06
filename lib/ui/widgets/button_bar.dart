@@ -16,27 +16,42 @@ class ButtomBar extends StatelessWidget {
         labelStyle: TextStyle(fontSize: 15),
         tabs: [
           Tab(
-            icon: Icon(Icons.bakery_dining),
+            icon: Icon(
+              Icons.bakery_dining,
+              key: Key('tap1'),
+            ),
             text: 'Home',
           ),
           Tab(
-            icon: Icon(Icons.local_offer),
+            icon: Icon(
+              Icons.local_offer,
+              key: Key('tap2'),
+            ),
             text: 'Offert',
           ),
           Tab(
-            icon: Icon(Icons.qr_code),
+            icon: Icon(Icons.qr_code, key: Key('tap3')),
             text: 'QR',
           ),
           Tab(
-            icon: Icon(Icons.credit_card),
+            icon: Icon(
+              Icons.credit_card,
+              key: Key('tap4'),
+            ),
             text: 'Add',
           ),
           Tab(
-            icon: Icon(Icons.home_repair_service),
+            icon: Icon(
+              Icons.home_repair_service,
+              key: Key('tap5'),
+            ),
             text: 'Service',
           ),
           Tab(
-            icon: Icon(Icons.home_repair_service),
+            icon: Icon(
+              Icons.home_repair_service,
+              key: Key('tap6'),
+            ),
             text: 'ServTest',
           ),
         ],
