@@ -2,8 +2,9 @@ import 'package:flubank/ui/shared/constants.dart';
 import 'package:flutter/material.dart';
 
 class Amount extends StatelessWidget {
-  const Amount(this.title, this.amount, this.currency);
+  const Amount(this.key, this.title, this.amount, this.currency);
 
+  final Key key;
   final String title;
   final String amount;
   final String currency;

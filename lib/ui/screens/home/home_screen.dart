@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
         title: FlutterLogo(size: 50),
       ),
       body: DefaultTabController(
-        length: 5,
+        length: 6,
         child: Scaffold(
           floatingActionButton: FloatingActionButton(
             onPressed: () {
@@ -71,6 +71,7 @@ class HomeScreen extends StatelessWidget {
               BarScreenFirst(),
               CardScannerBar(),
               ServicesPayment(),
+              Container(),
             ],
           ),
           bottomNavigationBar: ButtomBar(),
@@ -78,4 +79,20 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  Widget OffertScreen() {
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          child: Card(
+            color: AppColors.accentColor,
+            child: Text('hola', style: TextStyle(fontSize: 18.0)),
+          ),
+        ),
+      ],
+    );
+  }
 }
+
+
