@@ -35,6 +35,10 @@ class ButtomBar extends StatelessWidget {
             icon: Icon(Icons.home_repair_service),
             text: 'Service',
           ),
+          Tab(
+            icon: Icon(Icons.home_repair_service),
+            text: 'ServTest',
+          ),
         ],
         labelColor: AppColors.mainDarkColor,
         unselectedLabelColor: AppColors.secondColor,
