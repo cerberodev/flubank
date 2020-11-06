@@ -53,6 +53,7 @@ class _SplashScreenBodyState extends State<SplashScreenBody> {
                   onTap: () =>
                       Navigator.pushNamed(context, LoginScreen.routeName),
                   text: 'Continuar',
+                  defaulButton: 'ButtonSplashKey',
                 )
               ],
             ),

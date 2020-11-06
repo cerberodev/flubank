@@ -37,6 +37,7 @@ class _LoginFormState extends State<LoginForm> {
                 Navigator.pushReplacementNamed(context, HomeScreen.routeName);
               }
             },
+            defaulButton: 'ButtonLogginKey',
           ),
           const SizedBox(height: 20),
           CheckboxListTile(
@@ -61,6 +62,7 @@ class _LoginFormState extends State<LoginForm> {
     const String invalidEmail = 'El email no es válido';
 
     return TextFormField(
+      key: Key('emailKey'),
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         labelText: 'Email',
@@ -112,6 +114,7 @@ class _LoginFormState extends State<LoginForm> {
     const emptyPassword = 'La contraseña es requerida';
 
     return TextFormField(
+      key: Key('passKey'),
       obscureText: true,
       decoration: InputDecoration(
         labelText: 'Contraseña',
