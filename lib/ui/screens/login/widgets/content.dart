@@ -8,7 +8,6 @@ class LoginScreenContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FlutterLogo(size: 80),
           _pageTitle(),

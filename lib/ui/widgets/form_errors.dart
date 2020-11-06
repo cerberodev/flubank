@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class FormErrors extends StatelessWidget {
   const FormErrors({
-    Key key,
+    Key errorKey,
     @required this.errors,
-  }) : super(key: key);
+  }) : super(key: errorKey);
 
   final List<String> errors;
 

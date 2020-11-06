@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 class AppDefaulButton extends StatelessWidget {
   final Function onTap;
   final String text;
-
-  const AppDefaulButton({Key key, @required this.onTap, @required this.text})
-      : super(key: key);
+  final String defaulButton;
+  const AppDefaulButton(
+      {@required this.onTap, @required this.text, @required this.defaulButton});
 
   @override
   Widget build(BuildContext context) {
     return FlatButton(
+      key: Key(defaulButton),
       minWidth: double.infinity,
       height: 50,
       onPressed: onTap,
