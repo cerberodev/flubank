@@ -119,7 +119,6 @@ void main() {
 
       final scrollsummary = TimelineSummary.summarize(scrolling);
       await scrollsummary.writeSummaryToFile('scrolling', pretty: true);
-      // await driver.tap(find.byValueKey('tapBar'));
     });
 
     test('Find Monto', () async {
