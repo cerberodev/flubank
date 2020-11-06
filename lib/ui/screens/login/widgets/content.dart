@@ -6,19 +6,16 @@ class LoginScreenContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      child: SingleChildScrollView(
-        child: Column(
-          children: [
-            FlutterLogo(size: 80),
-            _pageTitle(),
-            SizedBox(height: 10),
-            _pageSubtitle(),
-            SizedBox(height: 20),
-            LoginForm(),
-          ],
-        ),
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          FlutterLogo(size: 80),
+          _pageTitle(),
+          SizedBox(height: 10),
+          _pageSubtitle(),
+          SizedBox(height: 20),
+          LoginForm(),
+        ],
       ),
     );
   }

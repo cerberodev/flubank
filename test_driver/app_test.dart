@@ -46,7 +46,7 @@ void main() {
     });
   });
 
-  group('Loggind Confirmed', () {
+  group('Logging Confirmed', () {
     FlutterDriver driver;
 
     setUpAll(() async {
